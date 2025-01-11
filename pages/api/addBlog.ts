@@ -14,7 +14,7 @@ const handler = async (
                     title: req.body.title,
                     description: req.body.description,
                     category: req.body.category,
-                    image: req.body.image,
+                    imageurl: req.body.image,
                     author: req.body.email
                 })
                 await p.save();
