@@ -48,9 +48,9 @@ const Blogs = ({blogs}) => {
                 <h3 className="text-lg font-bold text-gray-800 mb-3">{blog.title}</h3>
                 <p className="text-gray-500 text-sm">{blog.description}</p>
                 <p className="text-orange-500 text-[13px] font-semibold mt-4">{blog.category} , {blog.author}</p>
-                <Link href={`/blogs/${blog._id}`} className="mt-4 inline-block px-4 py-2 rounded tracking-wider bg-orange-500 hover:bg-orange-600 text-white text-[13px]">Read More</Link>
+                <Link href={`/blogss/${blog._id}`} className="mt-4 inline-block px-4 py-2 rounded tracking-wider bg-orange-500 hover:bg-orange-600 text-white text-[13px]">Read More</Link>
               </div>
-            </div>
+            </div> 
           </div>
         ))}
       </div>
