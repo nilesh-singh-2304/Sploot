@@ -14,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         req.body.email == user.email &&
         req.body.password == user.password
       ) {
-        var token = jwt.sign(
+        const token = jwt.sign(
           { success: true, email: user.email, name: user.name },
           "Secret you wanna give",
           { expiresIn: "1d" }
