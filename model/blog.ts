@@ -11,7 +11,7 @@ const BlogSchema = new Schema(
     author: {type: String , required:true},
   },
   { timestamps: true }
-); //timestamp true krn se created at , updated at , etc functionalities kaam krn lgti h
+);
 
-mongoose.models = {}; //isk bina product cant be o
+mongoose.models = {}; 
 export default mongoose.model("Blog", BlogSchema);

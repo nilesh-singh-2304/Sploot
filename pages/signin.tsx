@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     if(localStorage.getItem('token')){
-      router.push('/blogs')                 //agr user already logged in h toh use login page nhi dikhayenge
+      router.push('/blogs')                 
     }
   }, [])
 

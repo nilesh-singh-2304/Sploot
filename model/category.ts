@@ -8,7 +8,7 @@ const CategorySchema = new Schema(
     imageurl: {type: String , required:true , unique:true},
   },
   { timestamps: true }
-); //timestamp true krn se created at , updated at , etc functionalities kaam krn lgti h
+); 
 
-mongoose.models = {}; //isk bina product cant be overwrite ka error aa jyega
+mongoose.models = {}; 
 export default mongoose.model("Category", CategorySchema);

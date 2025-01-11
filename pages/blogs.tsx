@@ -71,8 +71,8 @@ export async function getServerSideProps(){
     const blogs = await blog.find()
       
     return{
-      props:{blogs: JSON.parse(JSON.stringify(blogs)) , revalidate:6000000,} // will be passed to page components as props
-    }                  //jsonparse and then json stringify krn se object deep copy ho jaaata h , ye na krn p product serialise nhi ho paa rha tha
+      props:{blogs: JSON.parse(JSON.stringify(blogs)) , revalidate:6000000,} 
+    }                  
   }
   
 export default Blogs

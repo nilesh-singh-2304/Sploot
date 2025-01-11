@@ -8,7 +8,7 @@ const Navbar = () => {
     const [logg, setlogg] = useState(false)
           useEffect(() => {
               if(localStorage.getItem('token')){
-                setlogg(true)               //agr user already logged in h toh use login page nhi dikhayenge
+                setlogg(true)               
               }
             }, [])
 

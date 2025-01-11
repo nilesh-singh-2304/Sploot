@@ -34,8 +34,8 @@ export async function getServerSideProps(context){
     }
       
     return{
-      props:{ blogs: JSON.parse(JSON.stringify(blogs))} // will be passed to page components as props
-    }                  //jsonparse and then json stringify krn se object deep copy ho jaaata h , ye na krn p product serialise nhi ho paa rha tha
+      props:{ blogs: JSON.parse(JSON.stringify(blogs))} 
+    }                  
   }
 
 export default Blog
