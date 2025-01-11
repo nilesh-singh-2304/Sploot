@@ -3,9 +3,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import User from "@/model/user"
 import connectDB from "@/middleware/mongoose";
 
-type Data = {
-  name: string;
-};
 
 const handler = async (
     req: NextApiRequest,
@@ -13,7 +10,7 @@ const handler = async (
   )=> {
     if(req.method == 'POST'){
         // const {name,email} = req.body
-        let u = new User({email:req.body.email, password:req.body.password})
+        const u = new User({email:req.body.email, password:req.body.password})
         await u.save()
         res.status(200).json({ success:true });
         

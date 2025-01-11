@@ -2,11 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import User from "@/model/user";
 import connectDB from "@/middleware/mongoose";
-var jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-type Data = {
-  name: string;
-};
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method == "POST") {
