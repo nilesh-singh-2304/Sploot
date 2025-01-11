@@ -14,7 +14,7 @@ const Blogs = ({blogs}) => {
         initial();
     }, [])
 
-    const [categ, setcateg] = useState('cat1')
+    const [categ] = useState('cat1')
     const initial = () => {
         const fil = blogs.filter((blog) => blog.category == categ)
         setblogss(fil)
@@ -41,7 +41,7 @@ const Blogs = ({blogs}) => {
   <li><button onClick={handleClick} value={'cat3'}>Item 3</button></li>
 </ul>
         {blogss.map((blog) => (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
+            <div key={blog._id} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
             <div className="bg-white rounded overflow-hidden">
               <img src={blog.imageurl} alt="Blog Post 1" className="w-full h-52 object-cover" />
               <div className="p-6">
@@ -61,7 +61,7 @@ const Blogs = ({blogs}) => {
 
 
 
-export async function getServerSideProps(context){
+export async function getServerSideProps(){
     if(!mongoose.connections[0].readyState){
       await mongoose.connect(process.env.MONGO_URI)
   }

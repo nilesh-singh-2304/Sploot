@@ -3,47 +3,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState("abc");
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let a = await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/addBlog`, {
-      title: title,
-      description: description,
-      category: category,
-      image: image,
-      email: email,
-    });
-    let res = await a.data;
-    if (res.success) {
-        toast.success("Email Sent !! Check the Inbox", {
-            position: "bottom-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          });
-    }
-    else{
-        toast.error("Email Sent !! Check the Inbox", {
-            position: "bottom-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          });
-    }
-  };
 
   return (
     <div>

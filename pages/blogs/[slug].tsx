@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import blog from '@/model/blog'
 
 const Blog = ({blogs}) => {
-    const [blog, setblog] = useState(blogs)
+    const [blog] = useState(blogs)
   return (
     <div className='bg-slate-100'>
           <div className="h-screen bg-slate-100 grid md:grid-cols-2 items-center md:gap-4 gap-8 font-[sans-serif] max-w-5xl max-md:max-w-md mx-auto">
@@ -24,7 +24,7 @@ export async function getServerSideProps(context){
     if(!mongoose.connections[0].readyState){
       await mongoose.connect(process.env.MONGO_URI)
   }
-    let error = null;
+    // let error = null;
     console.log(context.query.slug)
     let blogs = await blog.findOne({_id : context.query.slug})
     if(blogs == null){
