@@ -31,19 +31,19 @@ const Add = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
 
-        let checked = check();
+        const checked = check();
 
         if(!checked){
             return;
         }
-        let a = await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/addBlog`, {
+        const a = await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/addBlog`, {
           title: title,
           description: description,
           category: category,
           image: image,
           email: email,
         });
-        let res = await a.data;
+        const res = await a.data;
         if (res.success) {
             toast.success("Email Sent !! Check the Inbox", {
                 position: "bottom-right",
