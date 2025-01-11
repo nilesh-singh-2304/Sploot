@@ -40,9 +40,10 @@ const Blogs = ({blogs}) => {
   <li><button onClick={handleClick} value={'cat2'}>Item 2</button></li>
   <li><button onClick={handleClick} value={'cat3'}>Item 3</button></li>
 </ul>
+<div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
         {blogss.map((blog) => (
-            <div key={blog._id} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
-            <div className="bg-white rounded overflow-hidden">
+            <div key={blog._id}>
+            <div key={blog._id} className="bg-white rounded overflow-hidden">
               <img src={blog.imageurl} alt="Blog Post 1" className="w-full h-52 object-cover" />
               <div className="p-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-3">{blog.title}</h3>
@@ -51,8 +52,10 @@ const Blogs = ({blogs}) => {
                 <Link href={`/blogss/${blog._id}`} className="mt-4 inline-block px-4 py-2 rounded tracking-wider bg-orange-500 hover:bg-orange-600 text-white text-[13px]">Read More</Link>
               </div>
             </div> 
-          </div>
+            </div>
+            
         ))}
+        </div>
       </div>
     </div>
     </div>
