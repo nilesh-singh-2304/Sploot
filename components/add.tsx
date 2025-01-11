@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 const Add = () => {
     const [title, setTitle] = useState("");
+    const router = useRouter();
       const [description, setDescription] = useState("");
       const [category, setCategory] = useState("");
       const [image, setImage] = useState("abc");
@@ -68,6 +70,13 @@ const Add = () => {
                 theme: "dark",
               });
         }
+
+        setCategory("");
+        setTitle("");
+        setDescription("");
+        setImage("");
+        setEmail("");
+        router.reload();
       };
   return (
     <div>
