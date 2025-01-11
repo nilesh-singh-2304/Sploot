@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
@@ -9,6 +9,12 @@ const Add = () => {
       const [category, setCategory] = useState("");
       const [image, setImage] = useState("abc");
       const [email, setEmail] = useState("");
+      const [logg, setlogg] = useState(false)
+      useEffect(() => {
+          if(localStorage.getItem('token')){
+            setlogg(true)               //agr user already logged in h toh use login page nhi dikhayenge
+          }
+        }, [])
 
       const check = () => {
         if(title == '' || description == '' || category == '' || image == '' || email == '' ){
@@ -80,7 +86,7 @@ const Add = () => {
       };
   return (
     <div>
-      <div className="dropdown dropdown-end">
+      { logg && <div className="dropdown dropdown-end">
             {/* The button to open modal */}
             <label htmlFor="my_modal_6" className="btn">
               Add Blog
@@ -193,7 +199,7 @@ const Add = () => {
                 </form>
               </div>
             </div>
-          </div>
+          </div>}
     </div>
   )
 }

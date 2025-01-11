@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     if(localStorage.getItem('token')){
-      router.push('/')                 //agr user already logged in h toh use login page nhi dikhayenge
+      router.push('/blogs')                 //agr user already logged in h toh use login page nhi dikhayenge
     }
   }, [])
 
@@ -88,7 +88,7 @@ const checked = check();
 
 setemail('')
 setpassword('')
-router.push('/')
+router.push('/blogs')
 }
 
   return (<div className="bg-gray-50 font-[sans-serif]">

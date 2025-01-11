@@ -1,7 +1,16 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 
 const Navbar = () => {
+
+    const [logg, setlogg] = useState(false)
+          useEffect(() => {
+              if(localStorage.getItem('token')){
+                setlogg(true)               //agr user already logged in h toh use login page nhi dikhayenge
+              }
+            }, [])
 
   return (
     <div>
@@ -10,8 +19,10 @@ const Navbar = () => {
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="flex-none">
+
+            {!logg && <Link href={'/signin'}><button className="btn">Login</button></Link>}
           
-          <div className="dropdown dropdown-end">
+          {logg && <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
@@ -41,7 +52,7 @@ const Navbar = () => {
                 <a>Logout</a>
               </li>
             </ul>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
