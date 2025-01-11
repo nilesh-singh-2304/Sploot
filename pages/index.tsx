@@ -25,36 +25,36 @@ export default function Home() {
   // console.log(email , password)
   
 
-  const handleSubmit = async(e) =>{
-    e.preventDefault()
-    const data = {email,password}
+//   const handleSubmit = async(e) =>{
+//     e.preventDefault()
+//     const data = {email,password}
     
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
-      method: "POST", 
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const result = await response.json();
-        // console.log("Success:", result);
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
+//       method: "POST", 
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(data),
+//     });
+//     const result = await response.json();
+//         // console.log("Success:", result);
 
-  if(result.success){
-    localStorage.setItem("token" , result.token)
-    localStorage.setItem("email" , result.email)
+//   if(result.success){
+//     localStorage.setItem("token" , result.token)
+//     localStorage.setItem("email" , result.email)
     
-    setTimeout(() => {
-      router.push(`${process.env.NEXT_PUBLIC_HOST}/blogs`)
+//     setTimeout(() => {
+//       router.push(`${process.env.NEXT_PUBLIC_HOST}/blogs`)
     
-    }, 1500);
-  }
-  else{
-    console.log(result.error);
-  }
+//     }, 1500);
+//   }
+//   else{
+//     console.log(result.error);
+//   }
     
-setemail('')
-setpassword('')
-  }
+// setemail('')
+// setpassword('')
+//   }
 
   return (<div className="bg-gray-50 font-[sans-serif]">
       <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">

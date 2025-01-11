@@ -10,7 +10,7 @@ const handler = async (
     if(req.method == 'POST'){
         console.log(req.body)
         
-                let p = new blog({
+                const p = new blog({
                     title: req.body.title,
                     description: req.body.description,
                     category: req.body.category,

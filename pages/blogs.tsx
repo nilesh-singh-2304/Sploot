@@ -65,7 +65,7 @@ export async function getServerSideProps(){
     if(!mongoose.connections[0].readyState){
       await mongoose.connect(process.env.MONGO_URI)
   }
-    let blogs = await blog.find()
+    const blogs = await blog.find()
       
     return{
       props:{blogs: JSON.parse(JSON.stringify(blogs)) , revalidate: 10,} // will be passed to page components as props

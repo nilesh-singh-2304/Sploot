@@ -26,7 +26,7 @@ export async function getServerSideProps(context){
   }
     // let error = null;
     console.log(context.query.slug)
-    let blogs = await blog.findOne({_id : context.query.slug})
+    const blogs = await blog.findOne({_id : context.query.slug})
     if(blogs == null){
       return{
         props:{error : 404} // will be passed to page components as props
