@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
+import Logout from "./logout";
 
 const Navbar = () => {
 
@@ -22,7 +22,10 @@ const Navbar = () => {
 
             {!logg && <Link href={'/signin'}><button className="btn">Login</button></Link>}
           
-          {logg && <div className="dropdown dropdown-end">
+          {logg && <div className="flex">
+            <Logout/>
+            <div className="dropdown flex dropdown-end">
+            
             <div
               tabIndex={0}
               role="button"
@@ -52,7 +55,8 @@ const Navbar = () => {
                 <a>Logout</a>
               </li>
             </ul>
-          </div>}
+          </div>
+          </div> }
         </div>
       </div>
     </div>

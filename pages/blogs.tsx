@@ -36,9 +36,9 @@ const Blogs = ({blogs}) => {
       <div className="max-w-5xl max-lg:max-w-3xl max-sm:max-w-sm mx-auto">
         <h2 className="text-3xl font-extrabold text-gray-800 mb-8">Latest Blog Posts</h2>
         <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 mb-6 rounded-box">
-  <li><button onClick={handleClick} value={'cat1'}>Item 1</button></li>
-  <li><button onClick={handleClick} value={'cat2'}>Item 2</button></li>
-  <li><button onClick={handleClick} value={'cat3'}>Item 3</button></li>
+  <li><button onClick={handleClick} value={'cat1'}>Category 1</button></li>
+  <li><button onClick={handleClick} value={'cat2'}>Category 2</button></li>
+  <li><button onClick={handleClick} value={'cat3'}>Category 3</button></li>
 </ul>
 <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
         {blogss.map((blog) => (
