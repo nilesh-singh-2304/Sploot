@@ -43,7 +43,7 @@ const Blogs = ({blogs}) => {
         {blogss.map((blog) => (
             <div key={blog._id} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
             <div className="bg-white rounded overflow-hidden">
-              <img src=`${blog.imageurl}` alt="Blog Post 1" className="w-full h-52 object-cover" />
+              <img src={blog.imageurl} alt="Blog Post 1" className="w-full h-52 object-cover" />
               <div className="p-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-3">{blog.title}</h3>
                 <p className="text-gray-500 text-sm">{blog.description}</p>
