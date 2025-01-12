@@ -29,7 +29,7 @@ const Blogs = ({blogs}) => {
     }
   return (
     <div className='h-screen'>
-        <Navbar/>
+        {/* <Navbar/> */}
 
         <div className='py-5 bg-slate-100'><Add/></div>
       <div className="h-screen bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
