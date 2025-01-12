@@ -2,10 +2,12 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/navbar";
+import { PagesTopLoader } from 'nextjs-toploader/pages';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
    <>
+    <PagesTopLoader />
      <Navbar />
      <ToastContainer
     position="top-right"
