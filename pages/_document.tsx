@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import NextTopLoader from 'nextjs-toploader';
+// import NextTopLoader from 'nextjs-toploader';
 
 export default function Document() {
   return (
