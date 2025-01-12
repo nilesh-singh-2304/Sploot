@@ -8,7 +8,7 @@ const Logout = () => {
                   if(localStorage.getItem('token')){
                     setlogg(true)               
                   }
-                }, [])
+                }, [logg])
 
                 const handleClick = () => {
                     localStorage.removeItem('token')

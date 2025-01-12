@@ -90,6 +90,7 @@ const checked = check();
 setemail('')
 setpassword('')
 router.push('/blogs')
+router.reload()
 }
 
   return (<div className="bg-gray-50 font-[sans-serif]">

@@ -10,7 +10,7 @@ const Navbar = () => {
               if(localStorage.getItem('token')){
                 setlogg(true)               
               }
-            }, [])
+            }, [logg])
 
   return (
     <div>
